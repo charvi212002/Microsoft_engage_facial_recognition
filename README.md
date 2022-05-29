@@ -71,7 +71,7 @@ Here we are accessing the Web Camera of the User to capture the image when user 
 
 ### Application Host
 
-The application has been hosted on Heroku. You can visit to the hosted web application [here](https://dashboard.heroku.com/apps/emotiondetectioncnn/deploy/github).
+The application has been hosted on Heroku. You can visit to the hosted web application [here](https://emotiondetectioncnn.herokuapp.com/).
 
 
 
