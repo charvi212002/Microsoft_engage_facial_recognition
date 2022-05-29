@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width-device-width, initial-scale-1.0">
+        <title>
+            The Face Emotion 
+        </title>
+    </head>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/style.css') }}">
+    <body>
+        <h1 class="heading">
+            The Face emotion predicted is
+        </h1>
+        <div class="predimg">
+            <img src= "{{url_for('static', filename= 'images/input_image.jpg' )}}" height="200px">
+        </div>
+        
+        <h2 class="predheading">
+            {{ n }}
+        </h2>
+    </body>
+</html>

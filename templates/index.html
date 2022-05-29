@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width-device-width, initial-scale-1.0">
+        <title>
+            Facial Recognition 
+        </title>
+    </head>
+
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.min.js" integrity="sha512-dQIiHSl2hr3NWKKLycPndtpbh5iaHLo6MwrXm7F0FM5e+kL2U16oE9uIwPHUl6fQBeCthiEuV/rzP3MiAB8Vfw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.min.js"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+
+    <body>
+        <h1 class="heading"> Facial Recognition </h1>
+
+        <div class="outerdiv">
+
+            <div class="drag-area2">
+
+                <div id="permissiondiv" class="center"> 
+                    <div class="icon"><i class="fas fa-camera"></i></div>
+                    <h1> Click your own picture <br/> Get your mood...</h1>
+                    <button onclick="toggleview()">Open Camera</button>
+                </div>
+                
+                <div id="cameradiv" class="center">
+                    <div id="camera"></div>
+                    <button onclick="take_snapshot()">Tell my mood</button>
+                    <div id="results"></div>
+                </div>
+
+            </div>
+            <div class="drag-area">
+
+                <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                <header>Drag & Drop to Upload File</header>
+                <span>OR</span>
+                <button>Browse File on Device</button>
+
+                <form id="form" action="/prediction" method = "POST" enctype="multipart/form-data">
+                    <input type="file" name="file" hidden placeholder="upload your image" accept=".png, .jpg, .jpeg" alt="Login">
+                </form>   
+                <form id="myform" action="/subcamera" method = "POST" enctype="multipart/form-data">
+                    <input id="mydata" type="hidden" name="file" value=""/>
+                </form>  
+
+            </div>
+
+        </div>
+    </body>
+    <script src="{{url_for('static', filename='js/script.js')}}"></script>
+
+</html>
+
